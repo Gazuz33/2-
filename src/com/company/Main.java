@@ -70,24 +70,27 @@ public class Main extends JFrame
         Box hboxVariables = Box.createHorizontalBox();
         hboxVariables.setBorder(
                 BorderFactory.createLineBorder(Color.RED));
+        hboxVariables.add(Box.createHorizontalGlue());
+        hboxVariables.add(Box.createHorizontalStrut(100));
         hboxVariables.add(labelForX);
         hboxVariables.add(Box.createHorizontalStrut(10));
         hboxVariables.add(textFieldX);
-        hboxVariables.add(Box.createHorizontalGlue());
+
         hboxVariables.add(Box.createHorizontalStrut(100));
-        hboxVariables.add(Box.createHorizontalGlue());
+
         hboxVariables.add(labelForY);
         hboxVariables.add(Box.createHorizontalStrut(10));
         hboxVariables.add(textFieldY);
-        hboxVariables.add(Box.createHorizontalGlue());
+
         hboxVariables.add(Box.createHorizontalStrut(100));
-        hboxVariables.add(Box.createHorizontalGlue());
+
         hboxVariables.add(labelForZ);
         hboxVariables.add(Box.createHorizontalStrut(10));
         hboxVariables.add(textFieldZ);
-        // Создать область для вывода результата
+        hboxVariables.add(Box.createHorizontalGlue());
+        hboxVariables.add(Box.createHorizontalStrut(100));
         JLabel labelForResult = new JLabel("Результат:");
-        textFieldResult = new JTextField("0", 10);
+        textFieldResult = new JTextField("0", 20);
         textFieldResult.setMaximumSize(
                 textFieldResult.getPreferredSize());
         Box hboxResult = Box.createHorizontalBox();
@@ -97,7 +100,6 @@ public class Main extends JFrame
         hboxResult.add(textFieldResult);
         hboxResult.add(Box.createHorizontalGlue());
         hboxResult.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-        // Создать область для кнопок
         JButton buttonCalc = new JButton("Вычислить");
         //Добавление события нажатия кнопки buttonCalc
         buttonCalc.addActionListener(new ActionListener()
@@ -166,6 +168,10 @@ public class Main extends JFrame
         hboxButtons.add(Box.createHorizontalGlue());
         hboxButtons.setBorder(
                 BorderFactory.createLineBorder(Color.GREEN));
+        // Создать область для вывода результата
+
+        // Создать область для кнопок
+
         // Связать области воедино в компоновке BoxLayout
         Box contentBox = Box.createVerticalBox();
         contentBox.add(Box.createVerticalGlue());
@@ -173,6 +179,7 @@ public class Main extends JFrame
         contentBox.add(hboxVariables);
         contentBox.add(hboxResult);
         contentBox.add(hboxButtons);
+
         contentBox.add(Box.createVerticalGlue());
         getContentPane().add(contentBox, BorderLayout.CENTER);
     }
